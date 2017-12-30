@@ -1,10 +1,901 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <title>Jamie Leviner</title>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+    <meta name="description" content="Jamie Leviner Portfolio Site">
+    <!--<meta name="keywords" content="put, at, least, 20, important, keywords, here">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">-->
+    <link href="styles/style.css" rel="stylesheet"/>
+    <!--<link href="styles/sphere.css" rel="stylesheet"/>-->
+    <script src='scripts/jquery.3.2.1.min.js'></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 </head>
 <body>
+<div id="cubeTransition">
+    <div class="page1"><h2>Page 1</h2></div>
+    <div class="page2">
+        <!--<h2>Page 2</h2>-->
+        <div class="wrapper" id="wrapper">
+            <label class="file" for="file">
+                choose a mp3 file
+                <input id="file" type="file">
+            </label>
+        </div>
+    </div>
+    <div class="page3"><h2>Page 3</h2></div>
+    <div class="page4"><h2>Page 4</h2></div>
+</div>
 
-</body>
-</html>
+<ul id="bullets"></ul>
+
+<!--<div style="position: fixed;right: 0;top: 0;"><div style="border-bottom:3px solid #d7d7d7;border-top:3px solid #d7d7d7;width:410px;height:83px;background:#efefef;font-size:2.2rem;text-shadow:#868686 1px 1px 20px;display:flex;justify-content:center;align-items:center;transform:rotate(45deg) translate(110px,-20px);"><a style="color:#3f3f3f;text-decoration: none;" onMouseOver="this.style.textDecoration='underline'" onMouseOut="this.style.textDecoration='none'" href="//github.com/html50/cubeTransition.js">star me on github</a></div></div>-->
+<script>
+    function animationOut(i){}
+    function animationIn(i){}
+    //well, you need modify the cubeTransition.js file
+    //delete the two functions if you don't need this kinda after/before the switching animation.
+</script>
+<script src='scripts/wheel-indicator.js'></script>
+<script src="scripts/jquery.touchSwipe.min.js"></script>
+<script src="scripts/cubeTransition.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/593507/OrbitControls.js"></script>
+<script src="scripts/sphere.js"></script>
+</body></html>
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Jamie Leviner</title>-->
+
+    <!--<meta name="description" content="Jamie Leviner Portfolio Site">-->
+    <!--&lt;!&ndash;<meta name="keywords" content="put, at, least, 20, important, keywords, here">&ndash;&gt;-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+    <!--&lt;!&ndash;<link href="styles/sphere.css" rel="stylesheet">&ndash;&gt;-->
+    <!--<link href="styles/cube-transition-example.css" rel="stylesheet">-->
+    <!--&lt;!&ndash;<link href="styles/box-roll.css" rel="stylesheet">&ndash;&gt;-->
+    <!--&lt;!&ndash;<link href="styles/cube-example.css" rel="stylesheet">&ndash;&gt;-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="cubeTransition">-->
+    <!--<div class="page1"><h2>Page 1</h2></div>-->
+    <!--<div class="page2"><h2>Page 2</h2></div>-->
+    <!--<div class="page3"><h2>Page 3</h2></div>-->
+    <!--<div class="page4"><h2>Page 4</h2></div>-->
+<!--</div>-->
+<!--<ul id="bullets"></ul>-->
+
+
+<!--<body>-->
+<!--<div class="wrapper" id="wrapper">-->
+    <!--<label class="file" for="file">-->
+        <!--choose a mp3 file-->
+        <!--<input id="file" type="file">-->
+    <!--</label>-->
+<!--</div>-->
+
+<!--&lt;!&ndash;TODO: CUBE EXAMPLE&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="radio" checked id="radio-front" name="select-face"/>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="radio" id="radio-left" name="select-face"/>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="radio" id="radio-right" name="select-face"/>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="radio" id="radio-top" name="select-face"/>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="radio" id="radio-bottom" name="select-face"/>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="radio" id="radio-back" name="select-face"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<div class="separator"></div>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;<div class="space3d">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="_3dbox">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="_3dface _3dface&#45;&#45;front"></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="_3dface _3dface&#45;&#45;top"></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="_3dface _3dface&#45;&#45;bottom"></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="_3dface _3dface&#45;&#45;left"></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="_3dface _3dface&#45;&#45;right"></div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="_3dface _3dface&#45;&#45;back"></div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<div class="separator"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;<br><br>&ndash;&gt;-->
+
+<!--&lt;!&ndash;TODO: class=page-id-3166&ndash;&gt;-->
+<!--&lt;!&ndash;TODO: BODY&ndash;&gt;-->
+<!--&lt;!&ndash;<body class="home page-template-default page ascend nectar-auto-lightbox wpb-js-composer js-comp-ver-4.10 vc_responsive box-perspective-rolled box-perspective-not-rolled no-scroll"&ndash;&gt;-->
+      <!--&lt;!&ndash;data-footer-reveal="false" data-header-format="default" data-footer-reveal-shadow="none" data-dropdown-style="classic" data-cae="linear" data-megamenu-width="contained" data-cad="650"&ndash;&gt;-->
+      <!--&lt;!&ndash;data-aie="none" data-ls="pretty_photo" data-apte="center_mask_reveal" data-hhun="0" data-fancy-form-rcs="default" data-form-style="default" data-form-submit="regular" data-is="minimal"&ndash;&gt;-->
+      <!--&lt;!&ndash;data-button-style="rounded" data-header-inherit-rc="false" data-header-search="false" data-animated-anchors="true" data-ajax-transitions="true" data-full-width-header="true"&ndash;&gt;-->
+      <!--&lt;!&ndash;data-slide-out-widget-area="true" data-slide-out-widget-area-style="fullscreen" data-user-set-ocm="1" data-loading-animation="none" data-bg-header="true" data-ext-responsive="true"&ndash;&gt;-->
+      <!--&lt;!&ndash;data-header-resize="0" data-header-color="light" data-smooth-scrolling="0" data-permanent-transparent="1" data-responsive="1" data-scrollbar-width="15">&ndash;&gt;-->
+    <!--&lt;!&ndash;&lt;!&ndash;TODO: HEADER (LEFT: NAME, RIGHT: HAMBURGER MENU)&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<div id="header-outer" data-has-menu="false" data-transparent-header="true" data-remove-border="true" class="transparent no-pointer-events" data-using-pr-menu="false" data-mobile-fixed="1"&ndash;&gt;-->
+         <!--&lt;!&ndash;data-ptnm="false" data-lhe="default" data-user-set-bg="#ffffff" data-format="default" data-permanent-transparent="1" data-megamenu-rt="0" data-remove-fixed="0" data-cart="false"&ndash;&gt;-->
+         <!--&lt;!&ndash;data-transparency-option="" data-box-shadow="small" data-shrink-num="6" data-full-width="true" data-using-secondary="0" data-using-logo="" data-logo-height="40" data-m-logo-height="24"&ndash;&gt;-->
+         <!--&lt;!&ndash;data-padding="28" data-header-resize="0" style="padding-top: 28px; position: fixed; left: 0; right: 0; height: 85px; padding-right: 0;">&ndash;&gt;-->
+        <!--&lt;!&ndash; &ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="midnightHeader default no-pointer-events" style="position: absolute; overflow: hidden; top: 0; left: 0; right: 0; bottom: 0; transform: translateY(110%) translateZ(0px);">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="midnightInner" style="position: absolute; overflow: auto; top: 0; left: 0; right: 0; bottom: 0; transform: translateY(-110%) translateZ(0px); padding-right: 0;">&ndash;&gt;-->
+                <!--&lt;!&ndash;<header id="top">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="container" style="visibility: visible;">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="col span_3">&ndash;&gt;-->
+                                <!--&lt;!&ndash;&lt;!&ndash;TODO: CHANGE HREF BACK&ndash;&gt;&ndash;&gt;-->
+                                <!--&lt;!&ndash;<a id="logo" href="javascript:void(0);" class="no-image">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;Jamie&ndash;&gt;-->
+                                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;/span_3&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="col span_9 col_last">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="slide-out-widget-area-toggle mobile-icon fullscreen" data-icon-animation="simple-transform">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="#sidewidgetarea" class="closed">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<span>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<i class="lines-button x2">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<i class="lines"></i>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</i>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<nav>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<ul class="buttons" data-user-set-ocm="1" style="margin-top: -28px; height: 85px;">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="slide-out-widget-area-toggle" data-icon-animation="simple-transform" style="padding-bottom: 0; padding-top: 0;">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<a href="#sidewidgetarea" class="closed" style="visibility: visible; padding-top: 31px; padding-bottom: 31px;">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<span>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<i class="lines-button x2">&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<i class="lines"></i>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</i>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<ul class="sf-menu sf-js-enabled sf-arrows">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="no-menu-assigned">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<a href="#" style="padding-bottom: 33px; padding-top: 5px;">No menu assigned</a>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</nav>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;/span_9&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;/row&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;/container&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;</header>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="midnightHeader light no-pointer-events" style="position: absolute; overflow: hidden; top: 0; left: 0; right: 0; bottom: 0; transform: translateZ(0px);">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="midnightInner" style="position: absolute; overflow: auto; top: 0; left: 0; right: 0; bottom: 0; transform: translateZ(0px); padding-right: 0;">&ndash;&gt;-->
+                <!--&lt;!&ndash;<header id="top">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="container" style="visibility: visible;">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="col span_3">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<a id="logo" href="javascript:void(0);" class="no-image">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;Jamie&ndash;&gt;-->
+                                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;/span_3&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="col span_9 col_last">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="slide-out-widget-area-toggle mobile-icon fullscreen" data-icon-animation="simple-transform">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="#sidewidgetarea" class="closed">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<span>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<i class="lines-button x2">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<i class="lines"></i>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</i>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<nav>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<ul class="buttons" data-user-set-ocm="1" style="margin-top: -28px; height: 85px;">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="slide-out-widget-area-toggle" data-icon-animation="simple-transform" style="padding-bottom: 0; padding-top: 0;">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<a href="#sidewidgetarea" class="closed" style="visibility: visible; padding-top: 31px; padding-bottom: 31px;">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<span>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<i class="lines-button x2">&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<i class="lines"></i>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</i>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<ul class="sf-menu sf-js-enabled sf-arrows">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="no-menu-assigned">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<a href="#" style="padding-bottom: 33px; padding-top: 5px;">No menu assigned</a>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</nav>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;/span_9&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;/row&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;/container&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;</header>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="midnightHeader dark no-pointer-events" style="position: absolute; overflow: hidden; top: 0; left: 0; right: 0; bottom: 0; transform: translateY(110%) translateZ(0px);">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="midnightInner" style="position: absolute; overflow: auto; top: 0; left: 0; right: 0; bottom: 0; transform: translateY(-110%) translateZ(0px); padding-right: 0;">&ndash;&gt;-->
+                <!--&lt;!&ndash;<header id="top">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="container" style="visibility: visible;">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="col span_3">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<a id="logo" href="javascript:void(0);" class="no-image">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;Jamie&ndash;&gt;-->
+                                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;/span_3&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="col span_9 col_last">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="slide-out-widget-area-toggle mobile-icon fullscreen" data-icon-animation="simple-transform">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<a href="#sidewidgetarea" class="closed">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<span>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<i class="lines-button x2">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<i class="lines"></i>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</i>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<nav>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<ul class="buttons" data-user-set-ocm="1" style="margin-top: -28px; height: 85px;">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="slide-out-widget-area-toggle" data-icon-animation="simple-transform" style="padding-bottom: 0; padding-top: 0;">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<a href="#sidewidgetarea" class="closed" style="visibility: visible; padding-top: 31px; padding-bottom: 31px;">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<span>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<i class="lines-button x2">&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<i class="lines"></i>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</i>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<ul class="sf-menu sf-js-enabled sf-arrows">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<li class="no-menu-assigned">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<a href="#" style="padding-bottom: 33px; padding-top: 5px;">No menu assigned</a>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</nav>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;/span_9&ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;/row&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;&lt;!&ndash;/container&ndash;&gt;&ndash;&gt;-->
+                <!--&lt;!&ndash;</header>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;&lt;!&ndash;/header-outer&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<div id="ajax-loading-screen" data-disable-fade-on-click="0" data-effect="center_mask_reveal" data-method="standard" class="loaded hidden">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="mask-top"></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="mask-right"></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="mask-bottom"></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="mask-left"></span>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div id="ajax-content-wrap" class="no-scroll" style="margin-top: 0;">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="blurred-wrap no-scroll">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="nectar-box-roll" data-midnight="light" style="z-index: 1000; transform: translate(0px, 0px);">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="fullscreen-header" data-animate-in-effect="none" id="page-header-bg" data-text-effect="rotate_in" data-bg-pos="center" data-alignment="center"&ndash;&gt;-->
+                     <!--&lt;!&ndash;data-alignment-v="middle" data-parallax="0" data-height="512" style="background-color: rgb(43, 43, 43); height: 512px; overflow: visible; will-change: auto;">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;/overlaid-content&ndash;&gt;&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="video-color-overlay" data-color="#2b2b2b" style="background-color: rgb(43, 43, 43); opacity: 0.7;"></div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="mobile-video-image" style="background-image: url()"></div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="nectar-video-wrap" data-bg-alignment="center" style="width: 1600px; height: 512px; opacity: 1;">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<video class="nectar-video-bg" width="100%" height="100%" preload="auto" loop="" autoplay="" src="images/coding.webm"&ndash;&gt;-->
+                               <!--&lt;!&ndash;style="visibility: visible; width: 1600px; height: 900px; opacity: 1;">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<source type="video/webm" src="images/coding.webm">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<source type="video/mp4" src="images/coding.mp4">&ndash;&gt;-->
+                        <!--&lt;!&ndash;</video>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="overlaid-content" data-text-effect="rotate_in" data-alignment="center" data-alignment-v="middle" style="height: 512px; will-change: auto;">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="col span_6">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="inner-wrap">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<h1 class="top-heading">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<span class="wraped">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<span style="transform: rotateX(0deg) translate(0px, 0px); opacity: 1;">Not</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<span class="wraped">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<span style="transform: rotateX(0deg) translate(0px, 0px); opacity: 1;">Your</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<br>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<span class="wraped">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<span style="transform: rotateX(0deg) translate(0px, 0px); opacity: 1;">Average</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<br>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<span class="wraped">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<span style="transform: rotateX(0deg) translate(0px, 0px); opacity: 1;">Software</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<br>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<span class="wraped">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<span style="transform: rotateX(0deg) translate(0px, 0px); opacity: 1;">Engineer</span>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</h1>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<span class="subheader" style="transform: rotateX(0deg) translate(0px, 0px); opacity: 1;">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;Get ready to turn <i>ideas</i> into <i>reality</i>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="scroll-down-wrap">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<a href="#" class="section-down-arrow">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="fa fa-angle-down top"></i>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<i class="fa fa-angle-down"></i>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="container-wrap no-scroll nectar-box-roll-class bottomBoxOut" style="padding-bottom: 0; opacity: 1; height: 512px; will-change: auto; padding-right: 15px;">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="container main-content">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div id="fws_5a45dc02551ee" data-midnight="light" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-section standard_section"&ndash;&gt;-->
+                             <!--&lt;!&ndash;style="padding: 256px 178px 80px; margin-left: -178px; visibility: visible;" data-top-percent="16%" data-bottom-percent="5%">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="row-bg-wrap instance-0">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="inner-wrap">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="row-bg  using-bg-color" style="background-color: #3a6ee8;" data-color_overlay="" data-color_overlay_2="" data-gradient_direction=""&ndash;&gt;-->
+                                         <!--&lt;!&ndash;data-overlay_strength="0.3" data-enable_gradient="false">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="col span_12 light center" style="opacity: 0;">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="vc_col-sm-3 wpb_column column_container vc_column_container col no-extra-padding instance-0 one-fourths clear-both" data-shadow="none"&ndash;&gt;-->
+                                     <!--&lt;!&ndash;data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all"&ndash;&gt;-->
+                                     <!--&lt;!&ndash;data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="wpb_text_column wpb_content_element ">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="svg-icon-holder bound animated-in" data-size="" data-animation-speed="65" data-animation="true" data-animation-delay="0" data-color="extra-color-2"&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;id="nectar-svg-animation-instance-0" style="opacity: 1;">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<object type="image/svg+xml" data="images/ecommerce_diamond.svg"></object>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<h3></h3>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="wpb_text_column wpb_content_element ">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<h6>World-Class Apps</h6>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="vc_col-sm-3 wpb_column column_container vc_column_container col no-extra-padding instance-1 one-fourths right-edge" data-shadow="none" data-border-animation=""&ndash;&gt;-->
+                                     <!--&lt;!&ndash;data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"&ndash;&gt;-->
+                                     <!--&lt;!&ndash;data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="wpb_text_column wpb_content_element ">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="svg-icon-holder bound animated-in" data-size="" data-animation-speed="65" data-animation="true" data-animation-delay="500" data-color="extra-color-2"&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;id="nectar-svg-animation-instance-1" style="opacity: 1;">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<object type="image/svg+xml" data="images/software_paintroller.svg"></object>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<h3></h3>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="wpb_text_column wpb_content_element ">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<h6>Tailored To Your Needs</h6>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="vc_col-sm-3 wpb_column column_container vc_column_container col no-extra-padding instance-2 one-fourths clear-both" data-shadow="none" data-border-animation=""&ndash;&gt;-->
+                                     <!--&lt;!&ndash;data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"&ndash;&gt;-->
+                                     <!--&lt;!&ndash;data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="wpb_text_column wpb_content_element ">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="svg-icon-holder bound animated-in" data-size="" data-animation-speed="65" data-animation="true" data-animation-delay="1000"&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;data-color="extra-color-2" id="nectar-svg-animation-instance-2" style="opacity: 1;">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<object type="image/svg+xml" data="images/basic_pencil_ruler.svg"></object>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<h3></h3>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="wpb_text_column wpb_content_element ">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<h6>Pixel-Perfect Code</h6>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="vc_col-sm-3 wpb_column column_container vc_column_container col no-extra-padding instance-3 one-fourths right-edge" data-shadow="none" data-border-animation=""&ndash;&gt;-->
+                                     <!--&lt;!&ndash;data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"&ndash;&gt;-->
+                                     <!--&lt;!&ndash;data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="wpb_text_column wpb_content_element ">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="svg-icon-holder bound animated-in" data-size="" data-animation-speed="65" data-animation="true" data-animation-delay="1500" data-color="extra-color-2"&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;id="nectar-svg-animation-instance-3" style="opacity: 1;">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<object type="image/svg+xml" data="images/basic_heart.svg"></object>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<h3></h3>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="wpb_text_column wpb_content_element ">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<h6>Built With Love</h6>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div id="fws_5a45dc025839f" data-midnight="light" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-section standard_section" style="padding: 0 178px 272px;&ndash;&gt;-->
+                            <!--&lt;!&ndash;margin-left: -178px; visibility: visible;" data-bottom-percent="17%">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="row-bg-wrap instance-1">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="inner-wrap">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="row-bg  using-bg-color" style="background-color: #3a6ee8;" data-color_overlay="" data-color_overlay_2="" data-gradient_direction="" data-overlay_strength="0.3"&ndash;&gt;-->
+                                         <!--&lt;!&ndash;data-enable_gradient="false">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="col span_12 light left" style="opacity: 0;">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="vc_col-sm-6 wpb_column column_container vc_column_container col padding-1-percent instance-4" data-shadow="none" data-border-animation="" data-border-animation-delay=""&ndash;&gt;-->
+                                <!--&lt;!&ndash;data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="left-right" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1"&ndash;&gt;-->
+                                <!--&lt;!&ndash;data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="wpb_text_column wpb_content_element ">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<h3 style="text-align: right;">Hi. I’m Jamie, a software engineer&nbsp;from&nbsp;Florence, SC. Please take a look around!</h3>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div style=" color: #cdf4f4;" class="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding instance-5" data-shadow="none" data-border-animation=""&ndash;&gt;-->
+                                 <!--&lt;!&ndash;data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"&ndash;&gt;-->
+                                 <!--&lt;!&ndash;data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="wpb_text_column wpb_content_element ">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<p>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;I offer complete&nbsp;software design and development including graphics and branding work. I&nbsp;specialize in creating beautiful custom-built applications&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;for clients ranging from individuals and small-businesses all the way to large enterprise corporations. All of my work is produced locally from Florence, SC.&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;What would you do if you had a software expert available at your fingertips?&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div id="fws_5a45dc0259290" data-midnight="dark" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-section standard_section" style="padding: 80px 178px;&ndash;&gt;-->
+                            <!--&lt;!&ndash;margin-left: -178px; visibility: visible;" data-top-percent="5%" data-bottom-percent="5%">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="row-bg-wrap instance-2">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="inner-wrap">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="row-bg  using-bg-color" style="background-color: #ffffff;" data-color_overlay="" data-color_overlay_2="" data-gradient_direction="" data-overlay_strength="0.3"&ndash;&gt;-->
+                                         <!--&lt;!&ndash;data-enable_gradient="false">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="col span_12 dark center" style="opacity: 0;">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="vc_col-sm-12 wpb_column column_container vc_column_container col has-animation no-extra-padding instance-6 animated-in" data-shadow="none" data-border-animation=""&ndash;&gt;-->
+                                 <!--&lt;!&ndash;data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"&ndash;&gt;-->
+                                 <!--&lt;!&ndash;data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="fade-in" data-delay="0" style="opacity: 1;">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="wpb_text_column wpb_content_element ">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<h2 class="light" style="text-align: center;">Stop blending in with the rest of the crowd and start leaving your mark on the world.</h2>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div id="fws_5a45dc0259b56" data-midnight="light" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-section standard_section" style="padding: 0 178px;&ndash;&gt;-->
+                            <!--&lt;!&ndash;margin-left: -178px; visibility: visible;">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="row-bg-wrap instance-3">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="inner-wrap">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="row-bg" style="" data-color_overlay="" data-color_overlay_2="" data-gradient_direction="" data-overlay_strength="0.3" data-enable_gradient="false"></div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="col span_12 light left" style="opacity: 0;">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="vc_col-sm-12 wpb_column column_container vc_column_container col has-animation no-extra-padding instance-7 animated-in" data-shadow="none" data-border-animation=""&ndash;&gt;-->
+                                     <!--&lt;!&ndash;data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"&ndash;&gt;-->
+                                     <!--&lt;!&ndash;data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="fade-in" data-delay="0" style="opacity: 1;">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="portfolio-wrap ">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="row portfolio-items masonry-items constrain-max-cols" data-masonry-type="default" data-ps="5" data-starting-filter="" data-gutter="default"&ndash;&gt;-->
+                                                     <!--&lt;!&ndash;data-col-num="elastic" style="transform: translateX(-178px); margin-left: 0; width: 1605px; visibility: visible; position: relative; height: 800px;"&ndash;&gt;-->
+                                                     <!--&lt;!&ndash;instance="0">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="col elastic-portfolio-item regular element work-examples" data-project-cat="work-examples " data-project-color="#27ccc0" data-title-color=""&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;data-subtitle-color="" data-delay-amount="0" style="width: 400px; position: absolute; left: 0; top: 0; z-index: 20;">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<div class="inner-wrap" data-animation="none">&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<div class="work-item style-3-alt" data-custom-content="on" data-text-align="middle">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;&lt;!&ndash;// TODO: COME BACK AND FILL OUT SRC  http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.16.46-PM-500x500.png 500w, http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.16.46-PM-350x350.png 350w&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<img class="size-regular" src="" alt="" height="500" width="500" srcset="" sizes="(min-width: 1000px) 25vw, (min-width: 690px) 50vw, 100vw" style="height: 400px;">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info-bg" style="background-color: rgb(39, 204, 192);"></div>&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info">&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;TODO: http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.16.46-PM.png&ndash;&gt;&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<a href="javascript:void(0);" style="display: inline;"></a>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<div class="vert-center">&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;<div class="custom-content">&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<h3 style="background-color:black;color:white;text-align:center;">&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;CS328&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;</h3>&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<p style="background-color:black;color:white;text-align:center;">&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;Brickout is a small replica of the classic Atari game, Breakout&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;/vert-center&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;&lt;!&ndash;work-item&ndash;&gt;&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;&lt;!&ndash;/inner-wrap&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;&lt;!&ndash;/col&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="col elastic-portfolio-item regular element work-examples" data-project-cat="work-examples " data-project-color="#78cd6e" data-title-color=""&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;data-subtitle-color="" data-delay-amount="2" style="width: 400px; position: absolute; left: 397px; top: 0; z-index: 30; transition-property: opacity,&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;transform; transition-duration: 0.6s; transform: translate3d(3px, 0px, 0px);">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<div class="inner-wrap" data-animation="none">&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<div class="work-item style-3-alt" data-custom-content="on" data-text-align="middle">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;&lt;!&ndash;TODO: src=http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.04.25-PM-500x500.png & srcset=http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.04.25-PM-500x500.png 500w, http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.04.25-PM-350x350.png 350w&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<img class="size-regular" src="" alt="" height="500" width="500" srcset="" sizes="(min-width: 1000px) 25vw, (min-width: 690px) 50vw, 100vw" style="height: 400px;">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info-bg" style="background-color: rgb(120, 205, 110);"></div>&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info">&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<a href="https://youtu.be/Xpg9k8TYmUU" style="display: inline;"></a>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<div class="vert-center">&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;<div class="custom-content">&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<h3 style="background-color:black;color:white;text-align:center;">CS328</h3>&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<p style="background-color:black;color:white;text-align:center;">&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;Pablo &amp; Ruiz is a sidescroller game about a cat named Pablo and a guitar named Ruiz as they travel through the world trying to&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;rescue the world from the evil chihuahua, Ragú&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;/vert-center&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;&lt;!&ndash;work-item&ndash;&gt;&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;&lt;!&ndash;/inner-wrap&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;&lt;!&ndash;/col&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="col elastic-portfolio-item regular element work-examples" data-project-cat="work-examples " data-project-color="#ae81f9" data-title-color=""&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;data-subtitle-color="" data-delay-amount="4" style="width: 400px; position: absolute; left: 794px; top: 0; z-index: 39; transition-property: opacity,&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;transform; transition-duration: 0.6s; transform: translate3d(6px, 0px, 0px);">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<div class="inner-wrap" data-animation="none">&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<div class="work-item style-3-alt" data-custom-content="on" data-text-align="middle">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;&lt;!&ndash;TODO: src=http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.30.30-PM.png and srcset=http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.30.30-PM.png 500w&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<img class="size-regular" src="" alt="" height="" width="" srcset="" sizes="(min-width: 1000px) 25vw, (min-width: 690px) 50vw, 100vw" style="height: 400px; transform: matrix(1.005, 0, 0, 1.005, 0, 0);">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info-bg" style="background-color: rgb(174, 129, 249);"></div>&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info">&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<a href="https://www.youtube.com/watch?v=yi4Gpp1wrUM" style="display: inline;"></a>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<div class="vert-center">&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;<div class="custom-content">&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<h3 style="background-color:black;color:white;text-align:center;">CS328</h3>&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<p style="background-color:black;color:white;text-align:center;">&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;The Horror of Angkor is a horror game based in Angkor Wat powered by the Unreal Engine. It revolves around an ancient monster hidden&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;in an underground temple who you must avoid while collecting 4 Golden Idols to escape.&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;/vert-center&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;&lt;!&ndash;work-item&ndash;&gt;&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;&lt;!&ndash;/inner-wrap&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;&lt;!&ndash;/col&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="col elastic-portfolio-item regular element work-examples" data-project-cat="work-examples " data-project-color="#2ac4ea" data-title-color=""&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;data-subtitle-color="" data-delay-amount="7" style="width: 400px; position: absolute; left: 1191px; top: 0; z-index: 47; transition-property: opacity,&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;transform; transition-duration: 0.6s; transform: translate3d(9px, 0px, 0px);">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<div class="inner-wrap" data-animation="none">&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<div class="work-item style-3-alt" data-custom-content="on" data-text-align="middle">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;&lt;!&ndash;TODO: src=http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.13.09-PM-500x500.png and srcset=http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.13.09-PM-500x500.png 500w, http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.13.09-PM-350x350.png 350w&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<img class="size-regular" src="" alt="" height="500" width="500" srcset="" sizes="(min-width: 1000px) 25vw, (min-width: 690px) 50vw, 100vw" style="height: 400px;">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info-bg" style="background-color: rgb(42, 196, 234);"></div>&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info">&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;TODO: href=https://github.com/josueespinosa/Cyrus&ndash;&gt;&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<a href="" style="display: inline;"></a>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<div class="vert-center">&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;<div class="custom-content">&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<h3 style="text-align:center;background-color:black;color:white;">CS360</h3>&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<p style="text-align:center;background-color:black;color:white;">&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;Cyrus is an intelligent spoken-dialogue assistant used to query databases in natural language using NLP, lemmatization, and&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;Levenshtein Distance algorithms to determine intent using any drop-in database.&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;/vert-center&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;&lt;!&ndash;work-item&ndash;&gt;&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;&lt;!&ndash;/inner-wrap&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;&lt;!&ndash;/col&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="col elastic-portfolio-item regular element work-examples" data-project-cat="work-examples " data-project-color="#ff4629" data-title-color=""&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;data-subtitle-color="" data-delay-amount="1" style="width: 400px; position: absolute; left: 0; top: 397px; z-index: 23; transition-property: opacity,&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;transform; transition-duration: 0.6s; transform: translate3d(0px, 3px, 0px);">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<div class="inner-wrap" data-animation="none">&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<div class="work-item style-3-alt" data-custom-content="on" data-text-align="middle">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;&lt;!&ndash;TODO: src=http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.17.07-PM-500x500.png and srcset=http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.17.07-PM-500x500.png 500w, http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-10.17.07-PM-350x350.png 350w&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<img class="size-regular" src="" alt"" height="500" width="500" srcset="" sizes="(min-width: 1000px) 25vw, (min-width: 690px) 50vw, 100vw" style="height: 400px;">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info-bg" style="background-color: rgb(255, 70, 41);"></div>&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info">&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;TODO: href=http://ejosue.com/wp-content/uploads/Infographic.pdf&ndash;&gt;&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<a href="" style="display: inline;"></a>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<div class="vert-center">&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;<div class="custom-content">&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;&lt;!&ndash;TODO: href=http://ejosue.com/wp-content/uploads/Infographic.pdf&ndash;&gt;&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<a href="" target="_blank" style="display: inline;">&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;<h3 style="background-color:black;color:white;text-align:center;">ENGL317</h3>&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;<p style="background-color:black;color:white;text-align:center;font-size:12px">&ndash;&gt;-->
+                                                                                    <!--&lt;!&ndash;This is an infographic on the dangers of college drinking.&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;/vert-center&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;&lt;!&ndash;work-item&ndash;&gt;&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;&lt;!&ndash;/inner-wrap&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;&lt;!&ndash;/col&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="col elastic-portfolio-item regular element work-examples" data-project-cat="work-examples " data-project-color="#8224e3" data-title-color=""&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;data-subtitle-color="" data-delay-amount="3" style="width: 400px; position: absolute; left: 397px; top: 397px; z-index: 31; transition-property: opacity,&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;transform; transition-duration: 0.6s; transform: translate3d(3px, 3px, 0px);">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<div class="inner-wrap" data-animation="none">&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<div class="work-item style-3-alt" data-custom-content="on" data-text-align="middle">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;&lt;!&ndash;TODO: src=http://ejosue.com/wp-content/uploads/HhDABmq-500x500.jpg and srcset=http://ejosue.com/wp-content/uploads/HhDABmq-500x500.jpg 500w, http://ejosue.com/wp-content/uploads/HhDABmq-350x350.jpg 350w&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<img class="size-regular" src="" alt="" height="500" width="500" srcset="" sizes="(min-width: 1000px) 25vw, (min-width: 690px) 50vw, 100vw" style="height: 400px;">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info-bg" style="background-color: rgb(130, 36, 227);"></div>&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info">&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;TODO: href=https://github.com/josueespinosa/BingBackground&ndash;&gt;&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<a href="" style="display: inline;"></a>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<div class="vert-center">&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;<div class="custom-content">&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;&lt;!&ndash;TODO: href=https://github.com/josueespinosa/BingBackground&ndash;&gt;&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<a href="" target="_blank" style="display: inline;">&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<h3 style="text-align: center;background-color:black;">BingBackground</h3>&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;<div style="background-color:black;">&ndash;&gt;-->
+                                                                                    <!--&lt;!&ndash;<p style="text-align: center;font-size:12px">&ndash;&gt;-->
+                                                                                        <!--&lt;!&ndash;BingBackground is a small command-line program that downloads the Bing homepage image and&ndash;&gt;-->
+                                                                                        <!--&lt;!&ndash;sets it as your desktop background. Images are saved in your picture directory in a folder named "Bing Backgrounds".&ndash;&gt;-->
+                                                                                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                     <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;/vert-center&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;&lt;!&ndash;work-item&ndash;&gt;&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;&lt;!&ndash;/inner-wrap&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;&lt;!&ndash;/col&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="col elastic-portfolio-item regular element work-examples" data-project-cat="work-examples " data-project-color="#aae7ec" data-title-color=""&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;data-subtitle-color="" data-delay-amount="5" style="width: 400px; position: absolute; left: 794px; top: 397px; z-index: 39; transition-property: opacity,&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;transform; transition-duration: 0.6s; transform: translate3d(6px, 3px, 0px);">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<div class="inner-wrap" data-animation="none">&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<div class="work-item style-3-alt" data-custom-content="on" data-text-align="middle">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;&lt;!&ndash;TODO: src=http://ejosue.com/wp-content/uploads/background-4d87f94d2cad3de9c13be992252ed842-500x500.png adn srcset=http://ejosue.com/wp-content/uploads/background-4d87f94d2cad3de9c13be992252ed842-500x500.png 500w, http://ejosue.com/wp-content/uploads/background-4d87f94d2cad3de9c13be992252ed842-350x350.png 350w&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<img class="size-regular" src="" alt="" height="500" width="500" srcset="" sizes="(min-width: 1000px) 25vw, (min-width: 690px) 50vw, 100vw" style="height: 400px; transform: matrix(1.005, 0, 0, 1.005, 0, 0);">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info-bg" style="background-color: rgb(170, 231, 236);"></div>&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info">&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;TODO: href=ttp://snocru.com/&ndash;&gt;&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<a href="" target="_blank" style="display: inline;"></a>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<div class="vert-center">&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;<div class="custom-content">&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;&lt;!&ndash;TODO: href=ttp://snocru.com/&ndash;&gt;&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<a href="" target="_blank" style="display: inline;">&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;<h3 style="color: white; text-align: center;background-color:black;">SNOCRU</h3>&ndash;&gt;-->
+                                                                                    <!--&lt;!&ndash;<p style="color: white; text-align: center;background-color:black;font-size:12px">&ndash;&gt;-->
+                                                                                        <!--&lt;!&ndash;The leading snow sports app that keeps you and your friends connected wherever you are in the mountains.&ndash;&gt;-->
+                                                                                        <!--&lt;!&ndash;SNOCRU uses advanced tracking technology with high performance and accuracy, as well as new features that&ndash;&gt;-->
+                                                                                        <!--&lt;!&ndash;connect you and your CRU in real-time. Turn the mountains on!&ndash;&gt;-->
+                                                                                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;/vert-center&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;&lt;!&ndash;work-item&ndash;&gt;&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;&lt;!&ndash;/inner-wrap&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;&lt;!&ndash;/col&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="col elastic-portfolio-item regular element work-examples" data-project-cat="work-examples " data-project-color="#fd0025" data-title-color=""&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;data-subtitle-color="" data-delay-amount="6" style="width: 400px; position: absolute; left: 1191px; top: 397px; z-index: 46; transition-property: opacity,&ndash;&gt;-->
+                                                         <!--&lt;!&ndash;transform; transition-duration: 0.6s; transform: translate3d(9px, 3px, 0px);">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<div class="inner-wrap" data-animation="none">&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<div class="work-item style-3-alt" data-custom-content="on" data-text-align="middle">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;&lt;!&ndash;TODO: src=http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-6.54.34-PM-500x500.png and srcset=http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-6.54.34-PM-500x500.png 500w, http://ejosue.com/wp-content/uploads/Screen-Shot-2017-12-10-at-6.54.34-PM-350x350.png 350w&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<img class="size-regular" src="" alt="" height="500" width="500" srcset="" sizes="(min-width: 1000px) 25vw, (min-width: 690px) 50vw, 100vw" style="height: 400px;">&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info-bg" style="background-color: rgb(253, 0, 37);"></div>&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;<div class="work-info">&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;TODO: href=http://trellis.yale.edu/#about&ndash;&gt;&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<a href="" target="_blank" style="display: inline;"></a>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;<div class="vert-center">&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;<div class="custom-content">&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;&lt;!&ndash;TODO: href=http://trellis.yale.edu/#about&ndash;&gt;&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;<a href="" target="_blank" style="display: inline;">&ndash;&gt;-->
+                                                                                <!--&lt;!&ndash;<h3 style="text-align: center;background-color:black;">Trellis for Yale University</h3>&ndash;&gt;-->
+                                                                                    <!--&lt;!&ndash;<p style="text-align: center;background-color:black;">&ndash;&gt;-->
+                                                                                        <!--&lt;!&ndash;Trellis is an Android application used for developing, administering, and collecting survey and social network data.&ndash;&gt;-->
+                                                                                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
+                                                                            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                                    <!--&lt;!&ndash;&lt;!&ndash;/vert-center&ndash;&gt;&ndash;&gt;-->
+                                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;&lt;!&ndash;work-item&ndash;&gt;&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;&lt;!&ndash;/inner-wrap&ndash;&gt;&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;&lt;!&ndash;/col&ndash;&gt;&ndash;&gt;-->
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                <!--&lt;!&ndash;&lt;!&ndash;/portfolio&ndash;&gt;&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;&lt;!&ndash;/portfolio wrap&ndash;&gt;&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div id="reasons" data-midnight="dark" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-section standard_section" style="padding: 80px 178px; margin-left: -178px; visibility: visible;" data-top-percent="5%" data-bottom-percent="5%"><div class="row-bg-wrap instance-4"><div class="inner-wrap"> <div class="row-bg  using-bg-color  " style="background-color: #ffffff; " data-color_overlay="" data-color_overlay_2="" data-gradient_direction="" data-overlay_strength="0.3" data-enable_gradient="false"></div></div> </div><div class="col span_12 dark right" style="opacity: 0;">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding instance-8" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="milestone-wrap"><div class="nectar-milestone motion_blur instance-0 animated-in" data-ms-align="default"> <div class="number accent-color" data-number-size="200" style="font-size: 200px; line-height: 200px;"><span class="in-sight">1</span><span class="in-sight">2</span></div> <div class="subject"></div> </div></div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding instance-9" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div id="fws_5a45dc0263461" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row standard_section    " style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   " style=""></div> </div><div class="col span_12  ">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding instance-10" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="divider-wrap"><div style="height: 20px;" class="divider"></div></div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;<div class="wpb_text_column wpb_content_element ">&ndash;&gt;-->
+                                                        <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<h5 style="text-align: left;"><span style="color: #3a6ee8;">Fluent Programming Languages</span></h5>&ndash;&gt;-->
+                                                            <!--&lt;!&ndash;<p style="text-align: left;">It takes a lot to be a software expert in this&nbsp;market. See&nbsp;why my clients&nbsp;keep coming back over and over again.</p>&ndash;&gt;-->
+
+                                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<div class="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding instance-11" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0">&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+
+                                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div></div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div></div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div id="fws_5a45dc0264422" data-midnight="light" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content standard_section   " style="padding-top: 0px; padding-bottom: 0px; margin-left: -178px; width: 1600px; visibility: visible;"><div class="row-bg-wrap instance-5"><div class="inner-wrap"> <div class="row-bg     extraPadding" style="width: 1600px;" data-color_overlay="" data-color_overlay_2="" data-gradient_direction="" data-overlay_strength="0.3" data-enable_gradient="false"></div></div> </div><div class="col span_12 light left" style="opacity: 0;">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div style="background-image: url(&quot;&quot;); height: 751px;" class="vc_col-sm-6 wpb_column column_container vc_column_container col padding-10-percent instance-12" data-using-bg="true" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="true" data-bg-color="#f7f7f7" data-bg-opacity="1" data-hover-bg="#f7f7f7" data-hover-bg-opacity="0.9" data-animation="" data-delay="0"><a class="column-link" href="http://ejosue.com/about/"></a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="morphing-outline instance-0" data-starting-color="#fd0025" data-hover-color="#fd0025" data-border-thickness="11" style="visibility: visible;"><div class="inner">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<h5><i>Continue Exploring?</i></h5>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<h2>About Me</h2>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div></div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div style="background-image: url(&quot;&quot;); height: 751px;" class="vc_col-sm-6 wpb_column column_container vc_column_container col padding-10-percent instance-13" data-using-bg="true" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="true" data-bg-color="#fd0025" data-bg-opacity="1" data-hover-bg="#fd0025" data-hover-bg-opacity="0.9" data-animation="" data-delay="0"><a class="column-link" href="http://ejosue.com/contact/"></a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="vc_column-inner">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<div class="wpb_wrapper">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="morphing-outline instance-1" data-starting-color="#ffffff" data-hover-color="#ffffff" data-border-thickness="11" style="visibility: visible;"><div class="inner">&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<h5><i>Convinced?</i></h5>&ndash;&gt;-->
+                                        <!--&lt;!&ndash;<h2>Contact Me</h2>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div></div>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&lt;!&ndash;/row&ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&lt;!&ndash;/container&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&lt;!&ndash;/container-wrap&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&lt;!&ndash;blurred-wrap&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;</div> &lt;!&ndash;/ajax-content-wrap&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<a id="to-top" class="dark" style="bottom: -30px;"><i class="fa fa-angle-up top-icon"></i><i class="fa fa-angle-up"></i></a>&ndash;&gt;-->
+<!--&lt;!&ndash;<link rel="stylesheet" id="box-roll-css" href="http://ejosue.com/wp-content/themes/salient/css/box-roll.css?ver=4.9.1" type="text/css" media="all">&ndash;&gt;-->
+<!--&lt;!&ndash;<link rel="stylesheet" id="mediaelement-css" href="http://ejosue.com/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.6-78496d1" type="text/css" media="all">&ndash;&gt;-->
+<!--&lt;!&ndash;<link rel="stylesheet" id="wp-mediaelement-css" href="http://ejosue.com/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=4.9.1" type="text/css" media="all">&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript">&ndash;&gt;-->
+    <!--&lt;!&ndash;/* <![CDATA[ */&ndash;&gt;-->
+    <!--&lt;!&ndash;var wpcf7 = {"apiSettings":{"root":"http:\/\/ejosue.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};&ndash;&gt;-->
+    <!--&lt;!&ndash;/* ]]> */&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.9.2"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-content/themes/salient/js/prettyPhoto.js?ver=7.0.1"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-content/themes/salient/js/isotope.min.js?ver=7.6"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-content/themes/salient/js/midnight.js?ver=1.0"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-content/themes/salient/js/superfish.js?ver=1.4.8"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript">&ndash;&gt;-->
+    <!--&lt;!&ndash;/* <![CDATA[ */&ndash;&gt;-->
+    <!--&lt;!&ndash;var nectarLove = {"ajaxurl":"http:\/\/ejosue.com\/wp-admin\/admin-ajax.php","postID":"3166","rooturl":"http:\/\/ejosue.com","pluginPages":[],"disqusComments":"false","loveNonce":"fb8902a1cc","mapApiKey":""};&ndash;&gt;-->
+    <!--&lt;!&ndash;/* ]]> */&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-content/themes/salient/js/init.js?ver=8.0"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-content/themes/salient/js/tweenmax.min.js?ver=1.18.0"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-content/themes/salient/js/touchswipe.min.js?ver=1.0"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-content/themes/salient/js/vivus.min.js?ver=6.0.1"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-includes/js/comment-reply.min.js?ver=4.9.1"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-includes/js/wp-embed.min.js?ver=4.9.1"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript">&ndash;&gt;-->
+    <!--&lt;!&ndash;var mejsL10n = {"language":"en","strings":{"mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen-off":"Turn off Fullscreen","mejs.fullscreen-on":"Go Fullscreen","mejs.download-video":"Download Video","mejs.fullscreen":"Fullscreen","mejs.time-jump-forward":["Jump forward 1 second","Jump forward %1 seconds"],"mejs.loop":"Toggle Loop","mejs.play":"Play","mejs.pause":"Pause","mejs.close":"Close","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.time-skip-back":["Skip back 1 second","Skip back %1 seconds"],"mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.mute-toggle":"Mute Toggle","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.ad-skip":"Skip ad","mejs.ad-skip-info":["Skip in 1 second","Skip in %1 seconds"],"mejs.source-chooser":"Source Chooser","mejs.stop":"Stop","mejs.speed-rate":"Speed Rate","mejs.live-broadcast":"Live Broadcast","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.6-78496d1"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=4.9.1"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript">&ndash;&gt;-->
+    <!--&lt;!&ndash;/* <![CDATA[ */&ndash;&gt;-->
+    <!--&lt;!&ndash;var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};&ndash;&gt;-->
+    <!--&lt;!&ndash;/* ]]> */&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=4.9.1"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script type="text/javascript" src="http://ejosue.com/wp-content/plugins/js_composer_salient/assets/js/dist/js_composer_front.min.js?ver=4.10"></script>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<script src="//code.jquery.com/jquery-3.1.1.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="scripts/jquery.min.js"></script>&ndash;&gt;-->
+<!--<script src="scripts/cubeTransition.js"></script>-->
+<!--<script src="scripts/wheel-indicator.js"></script>-->
+<!--&lt;!&ndash;<script src="jquery.mousewheel.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="jquery.touchSwipe.js"></script>&ndash;&gt;-->
+<!--<script src="scripts/jquery.mousewheel.min.js"></script>-->
+<!--<script src="scripts/jquery.touchSwipe.min.js"></script>-->
+
+
+
+    <!--&lt;!&ndash;<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/593507/OrbitControls.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;<script src="scripts/sphere.js"></script>&ndash;&gt;-->
+<!--</body>-->
+<!--</html>-->
