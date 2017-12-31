@@ -10,7 +10,8 @@ body {
     background-color: #fefefe;
     font-family: Helvetica, sans-serif;
     font-size: 16px;
-    color: #fff;
+    /*color: #fff;*/
+    color: #e4e4e4;
 }
 
 #cubeTransition {
@@ -52,48 +53,48 @@ body {
 }
 
 .page2 {
-    /*background: #dc6c5f;*/
+    background: #dc6c5f;
 }
 
 /*TODO MARKER: SPHERE STYLES*/
-.color {
-    background: linear-gradient(-45deg, #555, #444);
-}
+/*.color {*/
+    /*background: linear-gradient(-45deg, #555, #444);*/
+/*}*/
 
-.black {
-    background: #000;
-}
+/*.black {*/
+    /*background: #000;*/
+/*}*/
 
-.wrapper .file {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 2px solid #fff;
-    border-radius: 2px;
-    letter-spacing: 0.01em;
-    color: #fff;
-    cursor: pointer;
-    transition: opacity .4s;
-    z-index: 2;
-    font-size: 1em;
-}
+/*.wrapper .file {*/
+    /*position: absolute;*/
+    /*top: 20px;*/
+    /*left: 20px;*/
+    /*padding: 10px;*/
+    /*box-sizing: border-box;*/
+    /*border: 2px solid #fff;*/
+    /*border-radius: 2px;*/
+    /*letter-spacing: 0.01em;*/
+    /*color: #fff;*/
+    /*cursor: pointer;*/
+    /*transition: opacity .4s;*/
+    /*z-index: 2;*/
+    /*font-size: 1em;*/
+/*}*/
 
-.wrapper .file:hover {
-    opacity: .8;
-}
+/*.wrapper .file:hover {*/
+    /*opacity: .8;*/
+/*}*/
 
-.wrapper input {
-    display: none;
-}
+/*.wrapper input {*/
+    /*display: none;*/
+/*}*/
 
-.wrapper canvas {
-    vertical-align: bottom;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
+/*.wrapper canvas {*/
+    /*vertical-align: bottom;*/
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*transform: translateY(-50%);*/
+/*}*/
 /*TODO MARKER: END SPHERE STYLES*/
 
 .page3 {
